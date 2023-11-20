@@ -1,7 +1,7 @@
 package uk.ac.rhul.cs2800;
 
 public class numStack {
-  private Stack numStack;
+  private final Stack numStack;
 
 
   public numStack() {
@@ -12,4 +12,10 @@ public class numStack {
     // Return the number of entries in the stack
     return numStack.size();
   }
+
+  public void push(float entry){
+    numStack.push(new Entry(entry));
+
+  }
+
 }
