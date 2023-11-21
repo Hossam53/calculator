@@ -22,7 +22,7 @@ class numStackTest {
   //test2
   @Test
   void testPushNumStack(){
-    numstack.push(5.0f);
+     numstack.push(5.0f);
     assertEquals(1, numstack.size(), "The size of the stack should be 1");
   }
 
@@ -33,6 +33,15 @@ class numStackTest {
     numstack.pop();
     assertEquals(0,numstack.size(),"The size of the stack should be zero");
 
+
+  }
+
+  //test 4
+  @Test
+  void testTopNumStack() throws EmptyStack{
+    numstack.push(6.0f);
+    assertEquals(  6.0f , numstack.top(), "The top entry should be the same as the pushed entry");
+    assertEquals(1, numstack.size(), "The size of the stack should be 1");
 
   }
 

@@ -27,4 +27,15 @@ public class numStack {
 
   }
 
+  public float top() throws EmptyStack{
+
+    try {
+      return numStack.top().getValue();
+    }catch (BadType e){
+      throw new RuntimeException(e);
+    }
+
+
+  }
+
 }
