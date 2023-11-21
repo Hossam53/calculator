@@ -26,6 +26,16 @@ class numStackTest {
     assertEquals(1, numstack.size(), "The size of the stack should be 1");
   }
 
+  //test 3
+  @Test
+  void testPushAndPopNumStack() throws EmptyStack {
+    numstack.push(4.0f);
+    numstack.pop();
+    assertEquals(0,numstack.size(),"The size of the stack should be zero");
+
+
+  }
+
 
 
 

@@ -17,5 +17,14 @@ public class numStack {
     numStack.push(new Entry(entry));
 
   }
+  public float pop() throws EmptyStack {
+    try {
+      return numStack.pop().getValue();
+
+    }catch (BadType e) {
+      throw new RuntimeException(e);
+    }
+
+  }
 
 }
