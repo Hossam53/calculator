@@ -6,4 +6,7 @@ package application;
 
 public class InvalidExpression extends Exception {
 
+  public InvalidExpression(String s) {
+    super(s);
+  }
 }
