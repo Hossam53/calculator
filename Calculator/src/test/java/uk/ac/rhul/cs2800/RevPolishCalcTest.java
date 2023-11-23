@@ -24,6 +24,15 @@ class RevPolishCalcTest {
   public void testPlusOne() throws  InvalidExpression {
     assertEquals(6, calc.evaluate("5 1 +"), "Adding one to a number should increment the number.");
   }
+//  @Test
+//  public void testPlusDecimal() throws  InvalidExpression {
+//    assertEquals(6.1, calc.evaluate("5 1.1 +"), "Adding one to a number should increment the number.");
+//  }
+  @Test
+  public void testMinusOne() throws  InvalidExpression {
+    assertEquals(4, calc.evaluate("5 1 -"), "Adding one to a number should increment the number.");
+  }
+
 
 
 }
