@@ -41,6 +41,10 @@ class RevPolishCalcTest {
   public void testMultiplication() throws InvalidExpression{
     assertEquals(calc.evaluate("5 4 *"),20,"Multiplying the number should give the desired output");
   }
+  @Test
+  public void testDivision() throws InvalidExpression{
+    assertEquals(calc.evaluate("8 4 /"),2,"Dividing the output should return the corresponding output");
 
+  }
 
 }

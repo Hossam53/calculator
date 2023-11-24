@@ -35,6 +35,12 @@ public class RevPolishCalc {
               result =e*f;
               numStack.push(result);
               break;
+            case "/":
+              float g = numStack.pop();
+              float h = numStack.pop();
+              result = h / g ;
+              numStack.push(result);
+              break;
 
 
             // Implement other cases for different operations
