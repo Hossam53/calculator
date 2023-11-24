@@ -29,6 +29,14 @@ public class RevPolishCalc {
               result = d - c;
               numStack.push(result);
               break;
+            case "*":
+              float e = numStack.pop();
+              float f = numStack.pop();
+              result =e*f;
+              numStack.push(result);
+              break;
+
+
             // Implement other cases for different operations
             default:
               numStack.push(Float.parseFloat(token));
