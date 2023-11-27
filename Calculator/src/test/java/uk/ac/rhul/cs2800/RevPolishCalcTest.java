@@ -3,6 +3,7 @@ package uk.ac.rhul.cs2800;
 import static org.junit.jupiter.api.Assertions.*;
 
 import application.InvalidExpression;
+import java.util.Random;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -46,5 +47,26 @@ class RevPolishCalcTest {
     assertEquals(calc.evaluate("8 4 /"),2,"Dividing the output should return the corresponding output");
 
   }
+
+  @Test
+  public void testNegativeDivision() throws InvalidExpression{
+    assertEquals(calc.evaluate("-5 1 /"),-5,"Dividing the output should return the corresponding output");
+  }
+  @Test
+  public void testTwoOperationsInARow() throws InvalidExpression{
+    assertEquals(calc.evaluate("5 1 4 - +"),2,"The corresponding operations should return the desired output");
+  }
+  @Test
+  public void TestRandom() throws InvalidExpression {
+    Random random = new Random();
+    for (int i = 0; i < 100; i++) {
+      int num1 = random.nextInt(100);
+      int num2 = random.nextInt(100);
+      String expression = num1 + " " + num2 + " +";
+      int expectedResult = num1 + num2;
+      assertEquals(calc.evaluate(expression), expectedResult, "Random addition should return the correct output");
+    }
+  }
+
 
 }

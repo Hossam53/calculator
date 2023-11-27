@@ -6,11 +6,9 @@ public class RevPolishCalc {
 
   private numStack numStack;
 
-  public RevPolishCalc() {
-    numStack = new numStack();
-  }
 
   public float evaluate(String expr) throws InvalidExpression {
+    numStack = new numStack();
     try {
       String[] tokens = expr.split(" ");
       for (String token : tokens) {
