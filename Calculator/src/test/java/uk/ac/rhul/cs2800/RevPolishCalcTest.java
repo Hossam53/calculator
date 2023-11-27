@@ -53,7 +53,7 @@ class RevPolishCalcTest {
     assertEquals(calc.evaluate("-5 1 /"),-5,"Dividing the output should return the corresponding output");
   }
   @Test
-  public void testTwoOperationsInARow() throws InvalidExpression{
+  public void testTwoOperations() throws InvalidExpression{
     assertEquals(calc.evaluate("5 1 4 - +"),2,"The corresponding operations should return the desired output");
   }
   @Test

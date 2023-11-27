@@ -2,6 +2,7 @@ package application;
 
 import java.util.Scanner;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 /**
  * Skeleton code for a terminal based calculator that reads an expression from the user and
@@ -61,7 +62,7 @@ public class AsciiView implements ViewInterface {
   }
 
   @Override
-  public void addCalculateObserver(Runnable f) {}
+  public void addCalculateObserver(Function<String, Float> f) {}
 
   @Override
   public void addTypeObserver(Consumer<OpType> c) {}

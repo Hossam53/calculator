@@ -6,6 +6,8 @@ package uk.ac.rhul.cs2800;
  * This enum provides constants for different types of data or input.
  * It's mainly used to categorise and distinguish between the different data types
  * in the context of the calculator application.
+ *
+ * @author zlac241
  */
 public enum Type {
 

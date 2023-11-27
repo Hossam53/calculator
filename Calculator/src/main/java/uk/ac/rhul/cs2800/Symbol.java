@@ -4,6 +4,8 @@ package uk.ac.rhul.cs2800;
  * Represents various arithmetic and grouping symbols.
  * This enum provides constants for different symbols used in arithmetic operations
  * and expressions. Each symbol also has a string representation which can be retrieved.
+ *
+ * @author zlac241
  */
 public enum Symbol {
 
