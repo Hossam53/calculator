@@ -5,6 +5,8 @@ import java.util.List;
 
 /**
  * Represents a stack data structure for storing Entry objects.
+ *
+ * @author zlac241
  */
 public class Stack {
 

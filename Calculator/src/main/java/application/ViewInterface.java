@@ -5,6 +5,7 @@ package application;
 // DO NOT remove my @author tag
 
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 /**
  * Any calculator view must implement these methods to allow the controller and the view to properly
@@ -21,7 +22,8 @@ public interface ViewInterface {
    * @param f the runnable object to do the calculation (a method that takes no parameters and
    *        returns no value)
    */
-  void addCalculateObserver(Runnable f);
+
+  void addCalculateObserver(Function<String, Float> f);
 
   /**
    * Add the method to tell the controller the type of calculation to do.

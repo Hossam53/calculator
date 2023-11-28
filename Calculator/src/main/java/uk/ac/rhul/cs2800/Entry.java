@@ -5,10 +5,12 @@ package uk.ac.rhul.cs2800;
 import java.util.Objects;
 
 /**
- * The {@code Entry} class represents an entry that can hold a value of
+ * The Entry class represents an entry that can hold a value of
  * different types: a number, a symbol, or a string. Depending on the
  * constructor used, the type of the entry is set, and this type must be
  * respected when accessing its value.
+ *
+ * @author zlac241
  */
 public class Entry {
 
@@ -37,7 +39,7 @@ public class Entry {
 
 
   /**
-   * Constructs a new {@code Entry} with a number type.
+   * Constructs a new Entry class with a number type.
    *
    * @param value the numeric value for this entry.
    */
@@ -47,7 +49,7 @@ public class Entry {
   }
 
   /**
-   * Constructs a new {@code Entry} with a symbol type.
+   * Constructs a new Entry class with a symbol type.
    *
    * @param which the symbol value for this entry.
    */
@@ -57,7 +59,7 @@ public class Entry {
   }
 
   /**
-   * Constructs a new {@code Entry} with a string type.
+   * Constructs a new Entry class with a string type.
    *
    * @param str the string value for this entry.
    */
