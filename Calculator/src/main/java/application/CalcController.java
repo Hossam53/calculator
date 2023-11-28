@@ -45,6 +45,7 @@ public class CalcController {
   CalcController(CalcModel model, ViewInterface view) {
     myModel = model;
     myView = view;
-    view.addCalculateObserver(this::handleCalculation); // Setting up observer for calculation requests
+    view.addCalculateObserver(
+        this::handleCalculation); // Setting up observer for calculation requests
   }
 }

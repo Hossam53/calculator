@@ -46,7 +46,7 @@ public class CalcView extends Application implements ViewInterface {
    * @param f The function to be used for evaluating expressions.
    */
   @Override
-  public void addCalculateObserver(Function<String, Float> f ) {
+  public void addCalculateObserver(Function<String, Float> f) {
     calcButton.setOnAction(event -> totalField.setText(
         String.valueOf(f.apply(inputField.getText()))));
   }
@@ -126,7 +126,7 @@ public class CalcView extends Application implements ViewInterface {
   /**
    * This is a Singleton View constructed by the JavaaFX Thread and made available through this
    * method.
-   * 
+   *
    * @return the single object representing this view
    */
   public static synchronized CalcView getInstance() {

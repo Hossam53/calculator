@@ -18,7 +18,7 @@ public class CalcModel implements Calculator {
    * Constructor for CalcModel.
    * Initializes the model with a Reverse Polish Notation calculator.
    */
-  public CalcModel(){
+  public CalcModel() {
     revPolish = new RevPolishCalc();
     // standard calculator initialization can be added here if needed
   }

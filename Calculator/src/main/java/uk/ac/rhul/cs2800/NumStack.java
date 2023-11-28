@@ -8,14 +8,14 @@ package uk.ac.rhul.cs2800;
  *
  * @author zlac241
  */
-public class numStack {
+public class NumStack {
   private final Stack numStack; // A stack of Entry objects to store float values
 
   /**
    * Constructor for numStack.
    * Initializes a new stack to hold the float values.
    */
-  public numStack() {
+  public NumStack() {
     this.numStack = new Stack();
   }
 
@@ -33,7 +33,7 @@ public class numStack {
    *
    * @param entry The float value to be pushed onto the stack.
    */
-  public void push(float entry){
+  public void push(float entry) {
     numStack.push(new Entry(entry));
   }
 
@@ -57,11 +57,11 @@ public class numStack {
    * @return The float value at the top of the stack.
    * @throws EmptyStack If the stack is empty.
    */
-  public float top() throws EmptyStack{
+  public float top() throws EmptyStack {
 
     try {
       return numStack.top().getValue();
-    }catch (BadType e){
+    } catch (BadType e) {
       throw new RuntimeException(e);
     }
 

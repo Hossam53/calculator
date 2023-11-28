@@ -12,7 +12,7 @@ import application.InvalidExpression;
  */
 public class RevPolishCalc implements Calculator {
 
-  private numStack numStack;
+  private NumStack numStack;
 
   /**
    * Evaluates a given RPN expression.
@@ -22,7 +22,7 @@ public class RevPolishCalc implements Calculator {
    * @throws InvalidExpression If the expression is invalid or an error occurs during evaluation.
    */
   public float evaluate(String expr) throws InvalidExpression {
-    numStack = new numStack();
+    numStack = new NumStack();
     try {
       // Split the expression into tokens
       String[] tokens = expr.split(" ");
@@ -67,7 +67,8 @@ public class RevPolishCalc implements Calculator {
 
       // Check if the final stack size is 1, indicating a valid expression
       if (numStack.size() != 1) {
-        throw new InvalidExpression("Invalid RPN expression. Stack should have only one item left.");
+        throw new InvalidExpression(
+            "Invalid RPN expression. Stack should have only one item left.");
       }
 
       // Return the final result

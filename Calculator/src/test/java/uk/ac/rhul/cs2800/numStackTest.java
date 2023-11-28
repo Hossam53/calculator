@@ -7,10 +7,10 @@ import org.junit.jupiter.api.Test;
 
 
 class numStackTest {
-  private numStack numstack;
+  private NumStack numstack;
   @BeforeEach
   void setUp(){
-    numstack = new numStack();
+    numstack = new NumStack();
   }
   //test1
   @Test
