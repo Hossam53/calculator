@@ -33,7 +33,6 @@ class NumStackTest {
     numstack.pop();
     assertEquals(0,numstack.size(),"The size of the stack should be zero");
 
-
   }
 
   //test 4

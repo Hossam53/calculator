@@ -29,5 +29,13 @@ class OpStackTest {
 
 
   }
+  @Test
+  void testTopOpStack() throws EmptyStack{
+    opStack.push(Symbol.INVALID);
+    assertEquals(Symbol.INVALID, opStack.top(), "The top entry should be the same as the pushed entry");
+    assertEquals(1, opStack.size(), "The size of the stack should be 1");
+
+  }
+
 
 }

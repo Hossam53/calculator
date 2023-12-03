@@ -20,4 +20,14 @@ public class OpStack {
       throw new RuntimeException("Incorrect type in stack", e);
     }
   }
+  public Symbol top() throws EmptyStack {
+
+    try {
+      return opStack.top().getSymbol();
+    } catch (BadType e) {
+      throw new RuntimeException(e);
+    }
+
+
+  }
 }
