@@ -28,5 +28,12 @@ class StrStackTest {
     numStack.pop();
     assertEquals(0,numStack.size(),"The size of the stack should be zero");
   }
+  @Test
+  void testTopStrStack() throws EmptyStack{
+    numStack.push("7");
+    assertEquals("7", numStack.top(), "The top entry should be the same as the pushed entry");
+    assertEquals(1, numStack.size(), "The size of the stack should be 1");
+
+  }
 
 }

@@ -13,7 +13,18 @@ public class StrStack {
     numStack.push(new Entry(entry));
   }
   public String pop() throws EmptyStack {
-    return numStack.pop().toString();
+    try {
+      return numStack.pop().getString();
+    } catch (BadType e) {
+      throw new RuntimeException(e);
+    }
+  }
+  public String top() throws EmptyStack {
+    try {
+      return numStack.top().getString();
+    } catch (BadType e) {
+      throw new RuntimeException(e);
+    }
   }
 
 
