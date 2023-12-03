@@ -22,4 +22,11 @@ class StrStackTest {
     numStack.push("5");
     assertEquals(1, numStack.size(), "The size of the stack should be 1");
   }
+  @Test
+  void testPushAndPopStrStack() throws EmptyStack {
+    numStack.push("5");
+    numStack.pop();
+    assertEquals(0,numStack.size(),"The size of the stack should be zero");
+  }
+
 }

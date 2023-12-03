@@ -12,5 +12,9 @@ public class StrStack {
   public void push(String entry) {
     numStack.push(new Entry(entry));
   }
+  public String pop() throws EmptyStack {
+    return numStack.pop().toString();
+  }
+
 
 }
