@@ -21,5 +21,13 @@ class OpStackTest {
     opStack.push(Symbol.LEFT_BRACKET);
     assertEquals(1, opStack.size(), "The size of the stack should be 1");
   }
+  @Test
+  void testPushAndPopOpStack() throws EmptyStack {
+    opStack.push(Symbol.DIVIDE);
+    opStack.pop();
+    assertEquals(0,opStack.size(),"The size of the stack should be zero");
+
+
+  }
 
 }

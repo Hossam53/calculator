@@ -12,4 +12,12 @@ public class OpStack {
   public void push(Symbol entry) {
     opStack.push(new Entry(entry));
   }
+
+  public Symbol pop() throws EmptyStack {
+    try {
+      return opStack.pop().getSymbol();
+    } catch (BadType e) {
+      throw new RuntimeException("Incorrect type in stack", e);
+    }
+  }
 }
