@@ -16,5 +16,10 @@ class OpStackTest {
   void testEmptyOpStack() {
     assertEquals(0, opStack.size(), "The size of the stack should be 0");
   }
+  @Test
+  void testPushOpStack(){
+    opStack.push(Symbol.LEFT_BRACKET);
+    assertEquals(1, opStack.size(), "The size of the stack should be 1");
+  }
 
 }

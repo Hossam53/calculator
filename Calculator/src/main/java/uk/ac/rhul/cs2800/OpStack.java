@@ -9,4 +9,7 @@ public class OpStack {
   public int size() {
     return opStack.size();
   }
+  public void push(Symbol entry) {
+    opStack.push(new Entry(entry));
+  }
 }
