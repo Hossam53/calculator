@@ -9,4 +9,8 @@ public class StrStack {
   public int size(){
     return numStack.size();
   }
+  public void push(String entry) {
+    numStack.push(new Entry(entry));
+  }
+
 }

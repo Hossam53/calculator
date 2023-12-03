@@ -17,4 +17,9 @@ class StrStackTest {
   void testEmptyStrStack() {
     assertEquals(0, numStack.size(), "The size of the stack should be 0");
   }
+  @Test
+  void testPushStrStack(){
+    numStack.push("5");
+    assertEquals(1, numStack.size(), "The size of the stack should be 1");
+  }
 }
