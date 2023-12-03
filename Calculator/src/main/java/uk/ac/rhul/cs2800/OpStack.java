@@ -27,7 +27,5 @@ public class OpStack {
     } catch (BadType e) {
       throw new RuntimeException(e);
     }
-
-
   }
 }
