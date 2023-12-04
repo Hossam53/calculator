@@ -25,6 +25,10 @@ class StandardCalcTest {
   void testSimpleDivision() throws InvalidExpression{
     assertEquals(4.0f,calc.evaluate("8/2"),"Dividing by two should return the correct answer");
   }
+  @Test
+  void testSimpleMultiplication() throws InvalidExpression{
+    assertEquals(6.0f,calc.evaluate("3*2"),"Multiplying by two should output the correct answer");
+  }
 
 
 }

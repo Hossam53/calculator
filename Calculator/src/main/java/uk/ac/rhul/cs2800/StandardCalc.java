@@ -20,6 +20,7 @@ public class StandardCalc implements Calculator {
       case PLUS:
       case MINUS:
         return 1;
+      case TIME:
       case DIVIDE:
         return 2;
       default:
@@ -46,7 +47,7 @@ public class StandardCalc implements Calculator {
         }
       } else {
         isLastCharDigit = false;
-        if (c == '+' || c == '-' || c == '/') {
+        if (c == '+' || c == '-' || c == '/'|| c =='*') {
           Symbol currentSymbol = symbolForChar(c);
           while (true) {
             try {
@@ -86,6 +87,8 @@ public class StandardCalc implements Calculator {
         return Symbol.MINUS;
       case '/':
         return Symbol.DIVIDE;
+      case '*':
+        return Symbol.TIME;
       default:
         return Symbol.INVALID;
     }
