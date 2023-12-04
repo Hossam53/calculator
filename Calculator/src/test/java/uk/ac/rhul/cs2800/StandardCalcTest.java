@@ -17,5 +17,9 @@ class StandardCalcTest {
   void testSimpleAddition() throws InvalidExpression {
     assertEquals(4.0f,calc.evaluate("2+2"),"Adding two to the number should output the desired result");
   }
+  @Test
+  void testSimpleSubtraction() throws InvalidExpression{
+    assertEquals(2.0f,calc.evaluate("4-2"),"Substracting two from the number should give the correct output");
+  }
 
 }

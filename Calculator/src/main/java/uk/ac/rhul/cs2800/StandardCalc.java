@@ -38,6 +38,9 @@ public class StandardCalc implements Calculator {
         if (c == '+') {
           opStack.push(Symbol.PLUS);
         }
+        if (c == '-'){
+          opStack.push(Symbol.MINUS);
+        }
       }
     }
 
