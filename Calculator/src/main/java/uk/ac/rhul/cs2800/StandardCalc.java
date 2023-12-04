@@ -7,7 +7,6 @@ public class StandardCalc implements Calculator {
   private OpStack value;
   private RevPolishCalc rpCalc;
 
-
   @Override
   public float evaluate(String expression) throws InvalidExpression {
     value = new OpStack();
@@ -16,7 +15,19 @@ public class StandardCalc implements Calculator {
     return rpCalc.evaluate(postfix);
   }
 
-  private String infixToPostfix(String expression, OpStack opStack) {
+  public int getPrecedence(Symbol symbol) {
+    switch (symbol) {
+      case PLUS:
+      case MINUS:
+        return 1;
+      case DIVIDE:
+        return 2;
+      default:
+        return -1;
+    }
+  }
+
+  private String infixToPostfix(String expression, OpStack opStack) throws InvalidExpression {
     StringBuilder output = new StringBuilder();
     boolean isLastCharDigit = false;
 
@@ -35,24 +46,48 @@ public class StandardCalc implements Calculator {
         }
       } else {
         isLastCharDigit = false;
-        if (c == '+') {
-          opStack.push(Symbol.PLUS);
-        }
-        if (c == '-'){
-          opStack.push(Symbol.MINUS);
+        if (c == '+' || c == '-' || c == '/') {
+          Symbol currentSymbol = symbolForChar(c);
+          while (true) {
+            try {
+              if (!(opStack.size() != 0 && getPrecedence(currentSymbol) <= getPrecedence(opStack.top())))
+                break;
+            } catch (EmptyStack e) {
+              throw new InvalidExpression(e.getMessage());
+            }
+            try {
+              output.append(" ").append(opStack.pop().toString());
+            } catch (EmptyStack e) {
+              throw new InvalidExpression(e.getMessage());
+            }
+          }
+          opStack.push(currentSymbol);
         }
       }
     }
 
+    // Pop remaining operators
     while (opStack.size() != 0) {
       try {
-        output.append(" ").append(opStack.pop());
+        output.append(" ").append(opStack.pop().toString());
       } catch (EmptyStack e) {
-        throw new RuntimeException(e);
+        throw new InvalidExpression(e.getMessage());
       }
     }
 
     return output.toString().trim();
   }
 
+  private Symbol symbolForChar(char c) {
+    switch (c) {
+      case '+':
+        return Symbol.PLUS;
+      case '-':
+        return Symbol.MINUS;
+      case '/':
+        return Symbol.DIVIDE;
+      default:
+        return Symbol.INVALID;
+    }
+  }
 }

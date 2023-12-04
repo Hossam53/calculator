@@ -21,5 +21,10 @@ class StandardCalcTest {
   void testSimpleSubtraction() throws InvalidExpression{
     assertEquals(2.0f,calc.evaluate("4-2"),"Substracting two from the number should give the correct output");
   }
+  @Test
+  void testSimpleDivision() throws InvalidExpression{
+    assertEquals(4.0f,calc.evaluate("8/2"),"Dividing by two should return the correct answer");
+  }
+
 
 }
