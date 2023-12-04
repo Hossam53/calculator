@@ -34,6 +34,9 @@ public class StandardCalc implements Calculator {
 
     for (int i = 0; i < expression.length(); ++i) {
       char c = expression.charAt(i);
+      if(Character.isSpaceChar(c)){
+        continue;
+      }
 
       if (Character.isDigit(c)) {
         if (isLastCharDigit) {
@@ -47,37 +50,42 @@ public class StandardCalc implements Calculator {
         }
       } else {
         isLastCharDigit = false;
-        if (c == '+' || c == '-' || c == '/'|| c =='*') {
-          Symbol currentSymbol = symbolForChar(c);
-          while (true) {
-            try {
-              if (!(opStack.size() != 0 && getPrecedence(currentSymbol) <= getPrecedence(opStack.top())))
-                break;
-            } catch (EmptyStack e) {
-              throw new InvalidExpression(e.getMessage());
-            }
-            try {
+        if (c == '(') {
+          opStack.push(Symbol.LEFT_BRACKET);
+        } else if (c == ')') {
+          try {
+            while (opStack.top() != Symbol.LEFT_BRACKET) {
               output.append(" ").append(opStack.pop().toString());
-            } catch (EmptyStack e) {
-              throw new InvalidExpression(e.getMessage());
             }
+            opStack.pop();
+          } catch (EmptyStack e) {
+            throw new InvalidExpression("Mismatched parentheses");
+          }
+        } else if (c == '+' || c == '-' || c == '/' || c =='*') {
+          Symbol currentSymbol = symbolForChar(c);
+          try {
+            while (opStack.size() != 0 && getPrecedence(currentSymbol) <= getPrecedence(opStack.top())) {
+              output.append(" ").append(opStack.pop().toString());
+            }
+          } catch (EmptyStack e) {
+            throw new InvalidExpression("Unexpected error in processing operators");
           }
           opStack.push(currentSymbol);
         }
       }
     }
 
-    // Pop remaining operators
-    while (opStack.size() != 0) {
-      try {
+    try {
+      while (opStack.size() != 0) {
         output.append(" ").append(opStack.pop().toString());
-      } catch (EmptyStack e) {
-        throw new InvalidExpression(e.getMessage());
       }
+    } catch (EmptyStack e) {
+      throw new InvalidExpression("Unexpected error in popping remaining operators");
     }
 
     return output.toString().trim();
   }
+
 
   private Symbol symbolForChar(char c) {
     switch (c) {
