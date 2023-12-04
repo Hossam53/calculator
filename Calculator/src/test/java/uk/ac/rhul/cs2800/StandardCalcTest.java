@@ -33,6 +33,11 @@ class StandardCalcTest {
   void testSimpleBrackets() throws InvalidExpression{
     assertEquals(3.0f,calc.evaluate("( 3 + 3 ) / 2"));
   }
+  @Test
+  void testComplexOperation() throws InvalidExpression{
+    assertEquals(14.4f,calc.evaluate("( 4 * 3 ) + 4 / ( 3 + 2) * 3"),"Complex operation should return the corresponding value");
+  }
+
 
 
 
