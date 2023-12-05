@@ -1,5 +1,7 @@
 package application;
 
+import java.util.function.Consumer;
+
 /**
  * The CalcController class acts as a controller in the MVC architecture.
  * It mediates interactions between the view (user interface) and the model (calculator logic).
@@ -31,7 +33,9 @@ public class CalcController {
    * Handles changes in the type of notation (e.g., infix to postfix) used for calculations.
    * This method can be expanded to update the model or view based on the notation type.
    */
-  public void handleTypeChange() {
+  public void handleTypeChange(boolean c) {
+    myModel.setType(c);
+
     // Implementation can be added to handle the type change
   }
 
@@ -47,5 +51,6 @@ public class CalcController {
     myView = view;
     view.addCalculateObserver(
         this::handleCalculation); // Setting up observer for calculation requests
+    view.addTypeObserver(this::handleTypeChange);
   }
 }

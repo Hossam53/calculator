@@ -58,9 +58,9 @@ public class CalcView extends Application implements ViewInterface {
    * @param c The consumer to be notified when the calculator type changes.
    */
   @Override
-  public void addTypeObserver(Consumer<OpType> c) {
-    infixCalculatorButton.setOnAction(event -> c.accept(OpType.STANDARD));
-    revPolishCalculatorButton.setOnAction(event -> c.accept(OpType.REV_POLISH));
+  public void addTypeObserver(Consumer<Boolean> c) {
+    infixCalculatorButton.setOnAction(event -> c.accept(true));
+    revPolishCalculatorButton.setOnAction(event -> c.accept(false));
   }
 
   /**

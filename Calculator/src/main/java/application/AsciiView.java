@@ -65,7 +65,7 @@ public class AsciiView implements ViewInterface {
   public void addCalculateObserver(Function<String, Float> f) {}
 
   @Override
-  public void addTypeObserver(Consumer<OpType> c) {}
+  public void addTypeObserver(Consumer<Boolean> c) {}
 
   @Override
   public void startView() {
