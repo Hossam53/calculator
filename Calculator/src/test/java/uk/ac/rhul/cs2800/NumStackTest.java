@@ -1,6 +1,7 @@
 package uk.ac.rhul.cs2800;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,8 +18,6 @@ class NumStackTest {
   void testEmptyNumStack() {
     assertEquals(0, numstack.size(), "The size of the stack should be 0");
   }
-
-
   //test2
   @Test
   void testPushNumStack(){
@@ -42,6 +41,15 @@ class NumStackTest {
     assertEquals(  6.0f , numstack.top(), "The top entry should be the same as the pushed entry");
     assertEquals(1, numstack.size(), "The size of the stack should be 1");
 
+  }
+  @Test
+  void testPopOnEmptyNumStack() {
+    assertThrows(EmptyStack.class, () -> numstack.pop());
+  }
+
+  @Test
+  void testTopOnEmptyNumStack() {
+    assertThrows(EmptyStack.class, () -> numstack.top());
   }
 
 

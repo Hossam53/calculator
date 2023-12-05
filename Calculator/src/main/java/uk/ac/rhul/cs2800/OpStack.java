@@ -6,9 +6,11 @@ public class OpStack {
   public OpStack() {
     this.opStack = new Stack();
   }
+
   public int size() {
     return opStack.size();
   }
+
   public void push(Symbol entry) {
     opStack.push(new Entry(entry));
   }
@@ -20,6 +22,7 @@ public class OpStack {
       throw new RuntimeException("Incorrect type in stack", e);
     }
   }
+
   public Symbol top() throws EmptyStack {
 
     try {

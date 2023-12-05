@@ -34,7 +34,7 @@ public class StandardCalc implements Calculator {
 
     for (int i = 0; i < expression.length(); ++i) {
       char c = expression.charAt(i);
-      if(Character.isSpaceChar(c)){
+      if (Character.isSpaceChar(c)) {
         continue;
       }
 
@@ -61,10 +61,11 @@ public class StandardCalc implements Calculator {
           } catch (EmptyStack e) {
             throw new InvalidExpression("Mismatched parentheses");
           }
-        } else if (c == '+' || c == '-' || c == '/' || c =='*') {
+        } else if (c == '+' || c == '-' || c == '/' || c == '*') {
           Symbol currentSymbol = symbolForChar(c);
           try {
-            while (opStack.size() != 0 && getPrecedence(currentSymbol) <= getPrecedence(opStack.top())) {
+            while (opStack.size() != 0 &&
+                getPrecedence(currentSymbol) <= getPrecedence(opStack.top())) {
               output.append(" ").append(opStack.pop().toString());
             }
           } catch (EmptyStack e) {
