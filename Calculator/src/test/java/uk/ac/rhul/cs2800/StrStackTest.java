@@ -9,7 +9,7 @@ class StrStackTest {
   private StrStack numStack;
 
   @BeforeEach
-  void setUp(){
+  void setUp() {
     numStack = new StrStack();
   }
 
@@ -17,23 +17,39 @@ class StrStackTest {
   void testEmptyStrStack() {
     assertEquals(0, numStack.size(), "The size of the stack should be 0");
   }
+
   @Test
-  void testPushStrStack(){
+  void testPushStrStack() {
     numStack.push("5");
     assertEquals(1, numStack.size(), "The size of the stack should be 1");
   }
+
   @Test
   void testPushAndPopStrStack() throws EmptyStack {
     numStack.push("5");
     numStack.pop();
-    assertEquals(0,numStack.size(),"The size of the stack should be zero");
+    assertEquals(0, numStack.size(), "The size of the stack should be zero");
   }
+
   @Test
-  void testTopStrStack() throws EmptyStack{
+  void testTopStrStack() throws EmptyStack {
     numStack.push("7");
     assertEquals("7", numStack.top(), "The top entry should be the same as the pushed entry");
     assertEquals(1, numStack.size(), "The size of the stack should be 1");
 
   }
 
+  @Test
+  void testPopOnEmptyStrStackThrowsEmptyStackException() {
+    assertThrows(EmptyStack.class, () ->
+      numStack.pop()
+    );
+  }
+
+  @Test
+  void testTopOnEmptyStrStackThrowsEmptyStackException() {
+    assertThrows(EmptyStack.class, () ->
+      numStack.top()
+    );
+  }
 }

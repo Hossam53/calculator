@@ -37,6 +37,18 @@ class StandardCalcTest {
   void testComplexOperation() throws InvalidExpression{
     assertEquals(14.4f,calc.evaluate("( 4 * 3 ) + 4 / ( 3 + 2) * 3"),"Complex operation should return the corresponding value");
   }
+  @Test
+  void testReverseInStandard(){
+    assertThrows(InvalidExpression.class,()->calc.evaluate("5 6+"));
+  }
+  @Test
+  void testMismatchedParenthesis(){
+    InvalidExpression e = assertThrows(InvalidExpression.class, ()->calc.evaluate("5 + (6 - 3) )"));
+    assertEquals("Mismatched parentheses",e.getMessage());
+
+  }
+
+
 
 
 
