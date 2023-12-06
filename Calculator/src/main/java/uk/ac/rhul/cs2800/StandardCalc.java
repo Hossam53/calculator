@@ -7,6 +7,8 @@ import application.InvalidExpression;
  * The StandardCalc class is responsible for evaluating string expressions in infix notation.
  * It first converts the infix expression to postfix notation and then uses a
  * Reverse Polish Notation calculator to evaluate the result.
+ *
+ * @author zlac241
  */
 public class StandardCalc implements Calculator {
   // Stack used to hold operators during the conversion process

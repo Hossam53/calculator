@@ -2,6 +2,8 @@ package uk.ac.rhul.cs2800;
 
 /**
  * Represents an exception that is thrown when an unexpected type is encountered.
+ *
+ *@author zlac241
  */
 public class BadType extends Exception {
 
