@@ -60,7 +60,7 @@ public class StandardCalc implements Calculator {
    * Converts an infix expression into postfix notation using a stack to handle operator precedence.
    *
    * @param expression The infix expression to convert.
-   * @param opStack The stack used to temporarily hold operators.
+   * @param opStack    The stack used to temporarily hold operators.
    * @return A string representing the expression in postfix notation.
    * @throws InvalidExpression if the expression contains unmatched parentheses or unknown symbols.
    */
@@ -107,8 +107,8 @@ public class StandardCalc implements Calculator {
           // Handle operator precedence and stack operations
           Symbol currentSymbol = symbolForChar(c);
           try {
-            while (opStack.size() != 0 &&
-                getPrecedence(currentSymbol) <= getPrecedence(opStack.top())) {
+            while (opStack.size() != 0
+                && getPrecedence(currentSymbol) <= getPrecedence(opStack.top())) {
               output.append(" ").append(opStack.pop().toString());
             }
           } catch (EmptyStack e) {
