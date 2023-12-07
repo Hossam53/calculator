@@ -46,7 +46,7 @@ public class CalcController {
    * @param model The CalcModel instance to be used for calculation logic.
    * @param view  The ViewInterface instance representing the user interface.
    */
-  CalcController(CalcModel model, ViewInterface view) {
+  public CalcController(CalcModel model, ViewInterface view) {
     myModel = model;
     myView = view;
     view.addCalculateObserver(

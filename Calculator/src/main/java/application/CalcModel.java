@@ -37,13 +37,14 @@ public class CalcModel implements Calculator {
    */
   @Override
   public float evaluate(String expression) throws InvalidExpression {
-    if(isInfix){
-    return standard.evaluate(expression);
-  }else {
+    if (isInfix) {
+      return standard.evaluate(expression);
+    } else {
       return revPolish.evaluate(expression);
     }
   }
-  public void setType(boolean e){
+
+  public void setType(boolean e) {
     this.isInfix = e;
   }
 
