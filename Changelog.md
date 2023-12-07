@@ -2,9 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
-
-## [Release 3.0] - 2023-11-28
+## [Release 3.0] - 2023-12-07
 ### Added
 
 - Added standard calculator
