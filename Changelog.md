@@ -4,33 +4,32 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [Release 2.0] - 2023-11-28
+## [Release 3.0] - 2023-11-28
 ### Added
 
-- Added reverse-polish calculator
+- Added standard calculator
 
 
 ### Fixed
 
 ### Changed
-- integrated reverse-polish calculator with gui
+- integrated standard calculator with the gui
 
 ### Security
 
 ### Deprecated
 
 ### Removed
-## [Release 1.0] - 2023-16-11
+
 ### Added
 - Stack assembly.
     - The main structure of the Calculator project
+    - Added CalcController and Mockview to test the controller
 
 ### Fixed
 -Numerous Checkstyle errors fixed
 
 ### Changed
-- Changed the javaFx default font to serif
-
 
 ### Security
 
@@ -39,5 +38,6 @@ All notable changes to this project will be documented in this file.
 ### Removed
 
 [unreleased]: https://gitlab.cim.rhul.ac.uk/zlac241/CS2800
-[release 1.0]: https://gitlab.cim.rhul.ac.uk/zlac241/CS2800
-[release 2.0]: https://gitlab.cim.rhul.ac.uk/zlac241/CS2800
+[release 1.0]: https://gitlab.cim.rhul.ac.uk/zlac241/CS2800/-/tags/release-1.0
+[release 2.0]: https://gitlab.cim.rhul.ac.uk/zlac241/CS2800/-/tags/release-2.0
+[release 3.0]: https://gitlab.cim.rhul.ac.uk/zlac241/CS2800/-/tags/release-3.0

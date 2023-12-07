@@ -1,6 +1,7 @@
 package application;
 
 import uk.ac.rhul.cs2800.RevPolishCalc;
+import uk.ac.rhul.cs2800.StandardCalc;
 
 /**
  * The CalcModel class implements the Calculator interface and is responsible for evaluating
@@ -14,12 +15,16 @@ public class CalcModel implements Calculator {
   private Calculator revPolish;
   private Calculator standard;
 
+  private boolean isInfix;
+
   /**
    * Constructor for CalcModel.
    * Initializes the model with a Reverse Polish Notation calculator.
    */
   public CalcModel() {
     revPolish = new RevPolishCalc();
+    standard = new StandardCalc();
+
     // standard calculator initialization can be added here if needed
   }
 
@@ -32,7 +37,15 @@ public class CalcModel implements Calculator {
    */
   @Override
   public float evaluate(String expression) throws InvalidExpression {
-    return revPolish.evaluate(expression);
+    if (isInfix) {
+      return standard.evaluate(expression);
+    } else {
+      return revPolish.evaluate(expression);
+    }
+  }
+
+  public void setType(boolean e) {
+    this.isInfix = e;
   }
 
   // Standard calculator evaluation methods can be added here for future expansion

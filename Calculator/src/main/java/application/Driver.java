@@ -7,7 +7,7 @@ public class Driver {
 
   /**
    * The entry point for the calculator.
-   * 
+   *
    * @param args ignored - could be used to choose which view to load in future?
    */
   public static void main(String[] args) {

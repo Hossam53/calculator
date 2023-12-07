@@ -2,6 +2,8 @@ package uk.ac.rhul.cs2800;
 
 /**
  * Represents an exception thrown when trying to access an element from an empty stack.
+ *
+ * @author zlac241
  */
 public class EmptyStack extends Exception {
 

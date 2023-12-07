@@ -30,7 +30,7 @@ public interface ViewInterface {
    * 
    * @param c the method to do the calculation takes an OpType argument and returns no value
    */
-  void addTypeObserver(Consumer<OpType> c);
+  void addTypeObserver(Consumer<Boolean> c);
 
   /**
    * The controller can call this to find the current expression to be evaluated.
