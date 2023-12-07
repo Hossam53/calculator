@@ -42,7 +42,7 @@ public class StandardCalc implements Calculator {
    * @param symbol The operator symbol.
    * @return An integer representing the operator's precedence.
    */
-  public int getPrecedence(Symbol symbol) {
+  private int getPrecedence(Symbol symbol) {
     // Define precedence for operators: + and - have lower precedence than * and /
     switch (symbol) {
       case PLUS:
